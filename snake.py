@@ -5,6 +5,7 @@ class Snake:
         self.turtles = []
         self.create_snake()
         self.head = self.turtles[-1]
+        self.head.color("orange")
     def create_snake(self):
         for i in range(len(self.positions)):
             new_turtle = Turtle("square")
