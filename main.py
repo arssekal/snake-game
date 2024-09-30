@@ -28,8 +28,11 @@ while game_on:
       score.increase_score()
       food.random_appear()
       my_snake.grow()
-   if my_snake.head.xcor() > 250 or my_snake.head.xcor() < -250 or my_snake.head.ycor() > 250 or my_snake.head.ycor() < -250 :
+   if my_snake.head.xcor() > 250 or my_snake.head.xcor() < -250 or my_snake.head.ycor() > 250 or my_snake.head.ycor() < -250:
       game_on = False
       score.game_over()
-   
+   for segment in my_snake.turtles[:-1]: 
+      if my_snake.head.distance(segment) < 10:
+         game_on = False
+         score.game_over()
 window.exitonclick()
