@@ -1,7 +1,9 @@
 from turtle import Turtle
+import random
 class Snake:
     def __init__(self):
         self.positions = [(-40,0),(-20,0),(0,0)]
+        self.colors = ("green", "yellow","blue","white","purple")
         self.turtles = []
         self.create_snake()
         self.head = self.turtles[-1]
@@ -19,7 +21,7 @@ class Snake:
         self.head.forward(20)
     def grow(self):
         new_turtle = Turtle("square")
-        new_turtle.color('white')
+        new_turtle.color(random.choice(self.colors))
         new_turtle.penup()
         self.turtles.insert(0,new_turtle)
     def up(self):
