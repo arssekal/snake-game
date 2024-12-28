@@ -1,2 +1,2 @@
-if segment == my_snake.head:
-      #    continue
+with open("high_score.txt","r") as file:
+#    score.high_score = int(file.readline())

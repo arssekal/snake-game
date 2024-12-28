@@ -14,6 +14,9 @@ decore = Decorate()
 my_snake = Snake()
 food = Food()
 score = Showscore()
+with open("high_score.txt","r") as file:
+   score.high_score = int(file.readline())
+   
 game_on = True
 while game_on:
    my_snake.move()
@@ -31,6 +34,7 @@ while game_on:
    if my_snake.head.xcor() > 250 or my_snake.head.xcor() < -250 or my_snake.head.ycor() > 250 or my_snake.head.ycor() < -250:
       game_on = False
       score.game_over()
+      
    for segment in my_snake.turtles[:-1]: 
       if my_snake.head.distance(segment) < 10:
          game_on = False
